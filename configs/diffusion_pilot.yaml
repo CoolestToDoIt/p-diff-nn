@@ -1,0 +1,11 @@
+seed: 42
+max_updates: 2000
+validation_interval: 500
+batch_size: 32
+learning_rate: 0.001
+max_seconds: 1800
+noise_steps: 200
+beta_start: 0.0005
+beta_end: 0.1
+tuning_seeds: [10001, 10002, 10003, 10004, 10005]
+candidate_seeds: [20001, 20002, 20003, 20004, 20005, 20006, 20007, 20008, 20009, 20010, 20011, 20012, 20013, 20014, 20015, 20016, 20017, 20018, 20019, 20020]

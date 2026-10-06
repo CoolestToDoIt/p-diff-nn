@@ -1,6 +1,9 @@
 # Phase 5: bounded latent diffusion pilot
 
-Authorization: proposed for separate review after the reconstruction milestone commit.
+Authorization: approved October 6, 2026 by the request to do the next phase.
+
+Status: complete. The narrow pilot target passed, but simple baselines performed
+better. See [results](05_Diffusion_Results.md) and [locked evaluation plan](06_Locked_Evaluation.md).
 
 Goal: test whether a learned unconditional latent sampler produces usable classifiers
 and compare it with simpler latent baselines. Autoencoder reconstruction passed, but

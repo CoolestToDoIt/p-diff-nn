@@ -2,8 +2,8 @@
 
 Research prototype for diffusion-generated MNIST classifier parameters. The fixed
 classifier has 25,818 parameters. The classifier, parameter codec, data splits, and
-baseline trainer, convolutional autoencoder, and latent export are implemented.
-Diffusion work is planned.
+baseline trainer, convolutional autoencoder, latent diffusion, standalone generation,
+and validation evaluation are implemented. Locked final test evaluation is planned.
 
 The authorized source pilot is complete: baseline validation accuracy 94.30%, ten
 fine-tuned checkpoints at 94.37–94.54%. See [results](plans/02_Source_Pilot_Results.md)
@@ -13,6 +13,10 @@ Full source collection is also complete: 200 checkpoints in 2.45 minutes, with
 See [collection results](plans/03_Source_Collection_Results.md). The 128-dimensional
 autoencoder passed its reconstruction gate: median validation accuracy 94.14%, a
 0.51 percentage-point loss. See [reconstruction results](plans/04_Autoencoder_Results.md).
+The diffusion pilot completed: 93.55% median validation accuracy, versus 94.15% for
+Gaussian sampling and 94.67% for averaged source weights. Diffusion's worst sample
+was 55.75%; see [full results](plans/05_Diffusion_Results.md). Official test and held-out
+evaluation await the [locked evaluation phase](plans/06_Locked_Evaluation.md).
 
 ## Setup and checks
 
@@ -80,6 +84,37 @@ paths for repeated runs. Dataset and model binaries are ignored by git. The plan
 folder includes results, CSV evidence, and a reconstruction plot. Reconstructed
 variation is lower than source variation; passing accuracy is not evidence that
 diffusion generation will outperform simple sampling.
+
+## Diffusion pilot and standalone generation
+
+```sh
+python -m p_diff.train_diffusion
+python -m p_diff.generate_models --seed 30001 --output artifacts/generated-classifier.pt
+python -m p_diff.evaluate --model artifacts/generated-classifier.pt
+```
+
+The pilot uses `configs/diffusion_pilot.yaml`, trains only on training-branch latents,
+selects a checkpoint using five fixed validation generation seeds, and compares twenty
+fresh diffusion candidates with twenty Gaussian candidates and two central baselines.
+All candidate results and complete classifiers are retained. `generator.pt` under
+`artifacts/diffusion-pilot/` contains a decoder-only standalone bundle; generation
+loads no MNIST data, encoder, or source weights and applies no classifier updates.
+`evaluate` loads only the saved classifier and fixed validation images. Pilot results
+are exploratory; the current diffusion sampler has an unreliable tail.
+
+Load a generated classifier:
+
+```python
+import torch
+from p_diff.classifier import Classifier
+
+checkpoint = torch.load("artifacts/generated-classifier.pt", weights_only=True)
+model = Classifier().eval()
+model.load_state_dict(checkpoint["state_dict"])
+# images: float32 [batch, 1, 28, 28], scaled to [0, 1]
+with torch.no_grad():
+    labels = model(images).argmax(dim=1)
+```
 
 Configuration lives in `configs/foundation.yaml`. Commands use CPU and never load
 the official test set. Checkpoints contain weights and run settings; `manifest.json`

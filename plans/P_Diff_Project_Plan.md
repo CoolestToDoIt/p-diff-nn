@@ -1,8 +1,9 @@
 # p-diff: Architecture and Project Plan
 
-Status: Foundation, source collection, and parameter autoencoder pilot completed
-October 6, 2026. The reconstruction gate passed. Diffusion and final evaluation remain
-proposed. See [phase status and authorization plans](README.md).
+Status: Foundation, source collection, autoencoder, and diffusion pilots completed
+October 6, 2026. Reconstruction and the narrow diffusion pilot target passed, but
+diffusion did not beat simple baselines. Locked final evaluation remains proposed.
+See [phase status and authorization plans](README.md).
 
 ## 1. Goal and limits
 

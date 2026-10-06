@@ -10,7 +10,9 @@ Keep project plans, authorization requests, and experiment decisions here.
 - [Full collection results](03_Source_Collection_Results.md): 200 checkpoints; integrity and accuracy gates passed.
 - [Autoencoder pilot](04_Autoencoder_Pilot.md): authorized and complete; reconstruction gate passed.
 - [Autoencoder results](04_Autoencoder_Results.md): 94.14% reconstructed median validation accuracy.
-- [Diffusion pilot](05_Diffusion_Pilot.md): proposed for separate review after the commit milestone.
+- [Diffusion pilot](05_Diffusion_Pilot.md): authorized and complete.
+- [Diffusion results](05_Diffusion_Results.md): target passed; Gaussian and weight averaging performed better.
+- [Locked evaluation](06_Locked_Evaluation.md): awaiting authorization for official test and held-out evaluation.
 
 Each substantial phase gets a plan specifying scope, compute limits, deliverables,
 validation gates, and authorization status before work begins. Approval of one
