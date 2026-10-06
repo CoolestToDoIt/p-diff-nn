@@ -1,0 +1,7 @@
+branch_seeds: [142, 242, 342, 442, 542, 642, 742, 842, 942, 1042]
+branch_splits: [train, train, train, train, train, train, train, train, validation, held_out]
+epochs: 8
+snapshots_per_branch: 20
+batch_size: 128
+learning_rate: 0.0001
+max_total_training_seconds: 1800

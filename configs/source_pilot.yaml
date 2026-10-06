@@ -1,0 +1,7 @@
+branch_seeds: [142, 242]
+branch_splits: [train, validation]
+epochs: 2
+snapshots_per_branch: 5
+batch_size: 128
+learning_rate: 0.0001
+max_total_training_seconds: 1800
