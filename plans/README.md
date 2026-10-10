@@ -18,7 +18,9 @@ Keep project plans, authorization requests, and experiment decisions here.
 - [Diagnosis results](07_Diagnosis_Results.md): one dominant latent direction and large diffusion extrapolation.
 - [Scalar latent pilot](08_Reduced_Latent_Pilot.md): authorized and complete.
 - [Scalar results and architecture](08_Scalar_Pilot_Results.md): stable 94.15% median; no advantage over simple sampling.
-- [Representation diagnosis](09_Representation_Diagnosis.md): awaiting approval; training/validation only, no training updates.
+- [Representation diagnosis](09_Representation_Diagnosis.md): authorized and complete; no training updates.
+- [Representation results](09_Representation_Results.md): mean bias dominates error; source variation is largely lost.
+- [Residual reconstruction pilot](10_Residual_Reconstruction_Pilot.md): awaiting approval; fixed mean anchor, one bounded training run.
 
 Each substantial phase gets a plan specifying scope, compute limits, deliverables,
 validation gates, and authorization status before work begins. Approval of one

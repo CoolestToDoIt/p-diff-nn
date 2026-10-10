@@ -1,0 +1,77 @@
+{
+  "complete": true,
+  "pca": {
+    "normalized_weights": {
+      "first_component_variance": 0.9390357928708362,
+      "rank_99_percent": 61,
+      "rank_999_percent": 132,
+      "participation_rank": 1.1338978078681137,
+      "total_centered_energy": 3983.160141101023
+    },
+    "standardized_codes": {
+      "first_component_variance": 0.9999875075316148,
+      "rank_99_percent": 1,
+      "rank_999_percent": 1,
+      "participation_rank": 1.0000249853718814,
+      "total_centered_energy": 20479.999991284687
+    }
+  },
+  "groups": {
+    "train": {
+      "source_variance": 0.000964240099228499,
+      "reconstructed_variance": 6.135579807544175e-05,
+      "variance_ratio": 0.06363124508567246,
+      "centered_mse": 0.0008339197578566427,
+      "mean_bias_mse": 0.14247423891248437,
+      "reconstruction_mse": 0.14330815867034102,
+      "centered_error_fraction": 0.8648465859528894,
+      "median_source_accuracy": 0.9467,
+      "median_reconstruction_accuracy": 0.9414,
+      "mean_source_reconstruction_disagreement": 0.02367375,
+      "source_pairwise_disagreement": 0.006550825471698113,
+      "reconstruction_pairwise_disagreement": 0.0018029638364779874,
+      "constant_training_mean_mse": 0.0009642400992204059,
+      "balanced_mean_bias_mse": 0.025760523000888696,
+      "balanced_centered_mse": 0.0007558426638297117,
+      "balanced_reconstruction_mse": 0.026516365664718405,
+      "balanced_constant_training_mean_mse": 0.0008048465059149206
+    },
+    "validation": {
+      "source_variance": 0.0009376208161160332,
+      "reconstructed_variance": 6.12514889445264e-05,
+      "variance_ratio": 0.06532650288018602,
+      "centered_mse": 0.0008072964931222189,
+      "mean_bias_mse": 0.14255997854598176,
+      "reconstruction_mse": 0.143367275039104,
+      "centered_error_fraction": 0.8610053011262431,
+      "median_source_accuracy": 0.9465,
+      "median_reconstruction_accuracy": 0.9414,
+      "mean_source_reconstruction_disagreement": 0.02372,
+      "source_pairwise_disagreement": 0.00656421052631579,
+      "reconstruction_pairwise_disagreement": 0.001878421052631579,
+      "constant_training_mean_mse": 0.0009670682204505003,
+      "balanced_mean_bias_mse": 0.02578125428666867,
+      "balanced_centered_mse": 0.0007269943298515958,
+      "balanced_reconstruction_mse": 0.02650824861652027,
+      "balanced_constant_training_mean_mse": 0.0007892306843375774
+    }
+  },
+  "sensitivity": {
+    "count": 22,
+    "coefficient_range": [
+      -1.719097375869751,
+      1.646539330482483
+    ],
+    "accuracy_range": [
+      0.9411,
+      0.9418
+    ],
+    "pairwise_prediction_disagreement": 0.0018722943722943722,
+    "normalized_endpoint_rms": 0.026362942531704903,
+    "normalized_output_variance": 6.08167247264646e-05
+  },
+  "weight_average_validation_accuracy": 0.9467,
+  "elapsed_seconds": 4.418182416819036,
+  "peak_rss_bytes": 774160384,
+  "training_updates": 0
+}

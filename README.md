@@ -189,5 +189,13 @@ weight averaging still scored 94.67%. This is exploratory work after the origina
 official test results were seen; it establishes no diffusion advantage.
 
 See [all results and architecture details](plans/08_Scalar_Pilot_Results.md).
-[The next diagnosis plan](plans/09_Representation_Diagnosis.md) requires authorization
-before further substantial work.
+The completed [representation diagnosis](plans/09_Representation_Results.md) found
+that mean bias accounts for 97.3% of balanced validation reconstruction error and
+reconstructed weight variance is only 6.5% of source variance. Reproduce it using:
+
+```sh
+python -m p_diff.diagnose_representation --output artifacts/representation-diagnosis-repeat
+```
+
+[The residual reconstruction plan](plans/10_Residual_Reconstruction_Pilot.md) requires
+authorization before the next training phase.

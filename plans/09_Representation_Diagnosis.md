@@ -1,6 +1,8 @@
 # Phase 9 proposal: diagnose representation and decoder sensitivity
 
-Authorization: awaiting user approval. No work under this phase has started.
+Authorization: approved October 10, 2026 by the user's "keep going" response.
+
+Status: complete. See [the results](09_Representation_Results.md).
 
 Phase 8 stabilized scalar generation, but mean-latent, Gaussian and bootstrap
 classifiers all remain near 94.15% validation accuracy, versus 94.67% for weight
