@@ -1,0 +1,13 @@
+{
+  "bundle_sha256": "efcbedbb81719a2ffea5f2e816427e71e6ae0a919766f3187ab1dea24e6cba1f",
+  "standalone_seed": 70001,
+  "standalone_classifier_equal": true,
+  "original_protocol_hashes_unchanged": true,
+  "decoder_state_exactly_matches_original": true,
+  "candidate_count": 402,
+  "final_code_sha256": {
+    "src/p_diff/scalar_generator.py": "d9f2cf4bd15e3e129f9328f85713a429d50c2b91269a1cdabb006dac359c4055",
+    "src/p_diff/train_scalar.py": "7747c5f5c97670b9adfd3a0974a83ce1a6b8877afea70d4cec07d2dd943b370d"
+  },
+  "note": "Final source adds finite-input/output checks and projection-gate cap checks after the one completed run; sampling and training math unchanged."
+}

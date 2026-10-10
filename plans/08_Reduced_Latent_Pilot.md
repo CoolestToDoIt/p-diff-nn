@@ -1,6 +1,9 @@
 # Phase 8: scalar latent generation with the existing decoder
 
-Authorization: awaiting user approval. Phase 7 permits diagnosis only.
+Authorization: approved October 10, 2026 by the user's "yep" response to this plan.
+
+Status: complete. See [the results](08_Scalar_Pilot_Results.md); the scalar sampler
+passed the validation target but showed no advantage over simple sampling.
 
 Hypothesis: the source codes' effectively one-dimensional distribution is easier to
 model with a scalar diffusion process, avoiding the original sampler's large-norm tail.

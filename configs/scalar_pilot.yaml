@@ -1,0 +1,9 @@
+seed: 42
+max_updates: 2000
+batch_size: 32
+learning_rate: 0.001
+validation_interval: 500
+max_seconds: 1800
+tuning_seeds: [60001, 60002, 60003, 60004, 60005]
+candidate_seed_start: 70001
+candidate_count: 100

@@ -151,8 +151,8 @@ in that environment. Code cells were also verified by direct execution.
 The saved standalone generator remains in `artifacts/diffusion-pilot/generator.pt`;
 all 207 final classifiers are under `artifacts/locked-evaluation/models/`. Dataset and
 model binaries stay local and ignored by git. Report evidence is committed under
-`plans/results/` and `plans/figures/`. Optional follow-up work requires approval of
-[a bounded revision plan](plans/08_Reduced_Latent_Pilot.md).
+`plans/results/` and `plans/figures/`. The completed scalar revision is documented in
+[the scalar pilot report](plans/08_Scalar_Pilot_Results.md).
 
 ## Validation-only sampler diagnosis
 
@@ -163,10 +163,31 @@ python -m p_diff.diagnose_latents
 The completed diagnosis fits PCA on training codes only and reads the saved pre-test
 validation scores. One component explains 99.9988% of latent variation, while 93/100
 frozen diffusion samples exceed the maximum training-code norm. See [diagnosis results](plans/07_Diagnosis_Results.md).
-No sampling changes or new training were performed. [Architecture notes](plans/Architecture_Notes.md)
-explain the existing compressed generator plus learned decoder and the proposed
-scalar-coordinate interface. The original locked evaluation remains unchanged.
+The diagnosis itself performed no sampling changes or new training. The original
+locked evaluation remains unchanged.
 
 Configuration lives in `configs/foundation.yaml`. Commands use CPU and never load
 the official test set. Checkpoints contain weights and run settings; `manifest.json`
 defines tensor ordering, and `metrics.json` records validation history and time.
+
+## Scalar generator pilot
+
+The authorized revision uses one scalar DDPM coefficient, a training-only PCA
+expansion to 128 coordinates, and the existing frozen learned decoder. The bundle
+contains no encoder or source checkpoints and needs no dataset at generation time.
+
+```sh
+python -m p_diff.train_scalar --output artifacts/scalar-pilot-repeat
+python -m p_diff.scalar_generator --seed 70001 --output artifacts/scalar-classifier.pt
+```
+
+Use a fresh output path for each command. Existing upstream artifacts are required
+for training. The completed run compared 100 candidates per stochastic method on
+validation data only: scalar diffusion median 94.15%, scalar Gaussian/bootstrap
+94.14%, and 128D Gaussian 94.15%. All passed the pilot reliability target, while
+weight averaging still scored 94.67%. This is exploratory work after the original
+official test results were seen; it establishes no diffusion advantage.
+
+See [all results and architecture details](plans/08_Scalar_Pilot_Results.md).
+[The next diagnosis plan](plans/09_Representation_Diagnosis.md) requires authorization
+before further substantial work.
