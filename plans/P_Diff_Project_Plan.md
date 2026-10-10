@@ -1,9 +1,10 @@
 # p-diff: Architecture and Project Plan
 
-Status: Foundation, source collection, autoencoder, and diffusion pilots completed
-October 6, 2026. Reconstruction and the narrow diffusion pilot target passed, but
-diffusion did not beat simple baselines. Locked final evaluation remains proposed.
-See [phase status and authorization plans](README.md).
+Status: First single-seed prototype completed October 10, 2026, including locked
+official-test and held-out evaluation. Diffusion missed the 80% reliability target
+(77/100), and simple baselines performed better. This is a documented negative
+result. See [final results](06_Locked_Evaluation_Results.md) and
+[phase status and authorization plans](README.md). Further investigations remain proposed.
 
 ## 1. Goal and limits
 

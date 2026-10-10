@@ -1,7 +1,12 @@
 # Phase 6: locked single-seed evaluation
 
-Authorization: awaiting user approval. This is the first phase that would evaluate
-official MNIST test images and held-out branch behavior. Phase 5 does not authorize it.
+Authorization: approved October 10, 2026 by the request to keep going after review of
+this next-phase plan. Covers official MNIST test images and held-out branch evaluation;
+no training or hyperparameter changes are authorized.
+
+Status: complete October 10, 2026. Diffusion missed the locked 80% reliability target;
+see [results](06_Locked_Evaluation_Results.md). All planned comparisons and deliverables
+are complete. An [optional diagnosis](07_Instability_Diagnosis.md) remains unapproved.
 
 Goal: characterize the frozen pilot generator with a larger sample count and final
 test evidence, including negative results. The pilot met its narrow target but lost

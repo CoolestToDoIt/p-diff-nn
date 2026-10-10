@@ -3,7 +3,8 @@
 Research prototype for diffusion-generated MNIST classifier parameters. The fixed
 classifier has 25,818 parameters. The classifier, parameter codec, data splits, and
 baseline trainer, convolutional autoencoder, latent diffusion, standalone generation,
-and validation evaluation are implemented. Locked final test evaluation is planned.
+and locked official-test evaluation are implemented. The first single-seed prototype
+is complete with a documented negative result for diffusion's reliability target.
 
 The authorized source pilot is complete: baseline validation accuracy 94.30%, ten
 fine-tuned checkpoints at 94.37–94.54%. See [results](plans/02_Source_Pilot_Results.md)
@@ -15,8 +16,13 @@ autoencoder passed its reconstruction gate: median validation accuracy 94.14%, a
 0.51 percentage-point loss. See [reconstruction results](plans/04_Autoencoder_Results.md).
 The diffusion pilot completed: 93.55% median validation accuracy, versus 94.15% for
 Gaussian sampling and 94.67% for averaged source weights. Diffusion's worst sample
-was 55.75%; see [full results](plans/05_Diffusion_Results.md). Official test and held-out
-evaluation await the [locked evaluation phase](plans/06_Locked_Evaluation.md).
+was 55.75%; see [pilot results](plans/05_Diffusion_Results.md).
+
+The locked 100-sample official-test evaluation is complete: diffusion median **94.08%**,
+worst **31.24%**, and **77%** within two points of the 94.93% training-source median,
+missing the required 80%. Gaussian median was **94.47%** with 100% in range; averaged
+source weights scored **94.96%**. See [final results](plans/06_Locked_Evaluation_Results.md).
+No training or selection used official test accuracy.
 
 ## Setup and checks
 
@@ -115,6 +121,38 @@ model.load_state_dict(checkpoint["state_dict"])
 with torch.no_grad():
     labels = model(images).argmax(dim=1)
 ```
+
+## Locked evaluation and example notebook
+
+After preparing the existing source and generator artifacts, the evaluation workflow
+freezes hashes and rules before any test access:
+
+```sh
+python -m p_diff.evaluation_protocol
+python -m p_diff.locked_evaluation
+```
+
+The protocol and output paths must be new. Selections are saved before the official
+test dataset can load; hashes and counts are checked throughout. Test accuracy never
+chooses candidates. Model revisions after this run must disclose that test results
+have already been seen. The report retains every candidate and source metric.
+
+To reproduce the completed run without creating a different protocol:
+
+```sh
+python -m p_diff.locked_evaluation --protocol plans/results/06_Protocol.json --output artifacts/locked-evaluation-repeat
+```
+
+Open [the prediction notebook](notebooks/generated_classifier.ipynb) with the project
+`.venv` kernel to load the validation-selected diffusion candidate and classify twelve
+validation images without updates. A notebook frontend may need `ipykernel` installed
+in that environment. Code cells were also verified by direct execution.
+
+The saved standalone generator remains in `artifacts/diffusion-pilot/generator.pt`;
+all 207 final classifiers are under `artifacts/locked-evaluation/models/`. Dataset and
+model binaries stay local and ignored by git. Report evidence is committed under
+`plans/results/` and `plans/figures/`. Optional follow-up work requires approval of
+[the instability diagnosis plan](plans/07_Instability_Diagnosis.md).
 
 Configuration lives in `configs/foundation.yaml`. Commands use CPU and never load
 the official test set. Checkpoints contain weights and run settings; `manifest.json`

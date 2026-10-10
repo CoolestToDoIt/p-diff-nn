@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "f106565527046202ebdd1f652050dc01217690a497d173647069bbfa3becf17f",
+  "selected": {
+    "diffusion": {
+      "method": "diffusion",
+      "seed": 40088,
+      "file": "models/diffusion-40088.pt",
+      "model_sha256": "2615ac25315adac078b399c76314b7925c357350bef04decbf8c9c3812d9a47a",
+      "validation_accuracy": 0.9418
+    },
+    "gaussian": {
+      "method": "gaussian",
+      "seed": 40011,
+      "file": "models/gaussian-40011.pt",
+      "model_sha256": "fb123bb5368202b7153543d86e75b8f91cea1633d6c691cf15e7dce27aab7fab",
+      "validation_accuracy": 0.9421
+    }
+  }
+}

@@ -12,7 +12,9 @@ Keep project plans, authorization requests, and experiment decisions here.
 - [Autoencoder results](04_Autoencoder_Results.md): 94.14% reconstructed median validation accuracy.
 - [Diffusion pilot](05_Diffusion_Pilot.md): authorized and complete.
 - [Diffusion results](05_Diffusion_Results.md): target passed; Gaussian and weight averaging performed better.
-- [Locked evaluation](06_Locked_Evaluation.md): awaiting authorization for official test and held-out evaluation.
+- [Locked evaluation](06_Locked_Evaluation.md): authorized and complete.
+- [Locked results](06_Locked_Evaluation_Results.md): diffusion 77% reliability; target missed; prototype complete.
+- [Optional instability diagnosis](07_Instability_Diagnosis.md): awaiting authorization; no new training or test access.
 
 Each substantial phase gets a plan specifying scope, compute limits, deliverables,
 validation gates, and authorization status before work begins. Approval of one
