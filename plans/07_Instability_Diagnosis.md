@@ -1,7 +1,10 @@
 # Phase 7: validation-only diffusion instability diagnosis
 
-Authorization: proposed, awaiting user approval. The first prototype is complete;
-this is an optional investigation, not required to finish the locked evaluation.
+Authorization: approved October 10, 2026 by the request to keep going. Includes
+diagnosis and architecture discussion; new training/sampling changes remain separate.
+
+Status: complete. See [results](07_Diagnosis_Results.md), [architecture notes](Architecture_Notes.md),
+and the separately proposed [scalar latent pilot](08_Reduced_Latent_Pilot.md).
 
 Question: which latent characteristics explain the diffusion sampler's weak tail?
 The locked run's 77% reliability missed the 80% target, while Gaussian sampling

@@ -14,7 +14,10 @@ Keep project plans, authorization requests, and experiment decisions here.
 - [Diffusion results](05_Diffusion_Results.md): target passed; Gaussian and weight averaging performed better.
 - [Locked evaluation](06_Locked_Evaluation.md): authorized and complete.
 - [Locked results](06_Locked_Evaluation_Results.md): diffusion 77% reliability; target missed; prototype complete.
-- [Optional instability diagnosis](07_Instability_Diagnosis.md): awaiting authorization; no new training or test access.
+- [Instability diagnosis](07_Instability_Diagnosis.md): authorized and complete; no new training or test access.
+- [Diagnosis results](07_Diagnosis_Results.md): one dominant latent direction and large diffusion extrapolation.
+- [Architecture notes](Architecture_Notes.md): compressed generator and learned decoder responsibilities.
+- [Scalar latent pilot](08_Reduced_Latent_Pilot.md): awaiting authorization for a bounded sampler revision.
 
 Each substantial phase gets a plan specifying scope, compute limits, deliverables,
 validation gates, and authorization status before work begins. Approval of one

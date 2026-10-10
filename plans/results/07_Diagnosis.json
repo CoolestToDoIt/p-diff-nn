@@ -1,0 +1,117 @@
+{
+  "complete": true,
+  "pca_rank_99_percent": 1,
+  "first_component_variance": 0.9999875075316148,
+  "groups": {
+    "train": {
+      "count": 160,
+      "norm": {
+        "median": 9.821956157684326,
+        "min": 0.6583101153373718,
+        "max": 19.449308395385742,
+        "pearson_with_validation_accuracy": -0.08136838092711642
+      },
+      "max_abs_coordinate": {
+        "median": 0.8845843374729156,
+        "min": 0.06978309899568558,
+        "max": 1.740122675895691,
+        "pearson_with_validation_accuracy": -0.08173204452098033
+      },
+      "pca_residual_rms": {
+        "median": 0.0032101633634376383,
+        "min": 0.0016524797827734692,
+        "max": 0.008191983210700308,
+        "pearson_with_validation_accuracy": -0.0072709068839374655
+      },
+      "nearest_training_latent_rms": {
+        "median": 0.005511252908036113,
+        "min": 0.0028601279482245445,
+        "max": 0.034246739000082016,
+        "pearson_with_validation_accuracy": 0.15867306461277583
+      }
+    },
+    "validation": {
+      "count": 20,
+      "norm": {
+        "median": 9.85710334777832,
+        "min": 0.690013587474823,
+        "max": 18.801076889038086,
+        "pearson_with_validation_accuracy": -0.06022443429376982
+      },
+      "max_abs_coordinate": {
+        "median": 0.8848093152046204,
+        "min": 0.07443729043006897,
+        "max": 1.6891463994979858,
+        "pearson_with_validation_accuracy": -0.06585593272356338
+      },
+      "pca_residual_rms": {
+        "median": 0.0031094152257081843,
+        "min": 0.002266812816213383,
+        "max": 0.004305185640459228,
+        "pearson_with_validation_accuracy": 0.11432946245381449
+      },
+      "nearest_training_latent_rms": {
+        "median": 0.006460795644670725,
+        "min": 0.003186972578987479,
+        "max": 0.038905348628759384,
+        "pearson_with_validation_accuracy": -0.0184279064536234
+      }
+    },
+    "diffusion": {
+      "count": 100,
+      "norm": {
+        "median": 184.30464935302734,
+        "min": 7.609511375427246,
+        "max": 749.693115234375,
+        "pearson_with_validation_accuracy": -0.5519317635448565
+      },
+      "max_abs_coordinate": {
+        "median": 19.397767066955566,
+        "min": 0.9773281812667847,
+        "max": 80.12147521972656,
+        "pearson_with_validation_accuracy": -0.5437885139932042
+      },
+      "pca_residual_rms": {
+        "median": 1.2677761230870672,
+        "min": 0.0823641069520135,
+        "max": 5.446838425471709,
+        "pearson_with_validation_accuracy": -0.5706218239801822
+      },
+      "nearest_training_latent_rms": {
+        "median": 14.596406936645508,
+        "min": 0.08241654932498932,
+        "max": 64.62332153320312,
+        "pearson_with_validation_accuracy": -0.552344014969081
+      }
+    },
+    "gaussian": {
+      "count": 100,
+      "norm": {
+        "median": 11.124041557312012,
+        "min": 9.585890769958496,
+        "max": 13.306702613830566,
+        "pearson_with_validation_accuracy": -0.08379752120946128
+      },
+      "max_abs_coordinate": {
+        "median": 2.889876127243042,
+        "min": 1.9843190908432007,
+        "max": 4.079946994781494,
+        "pearson_with_validation_accuracy": -0.021412439414983962
+      },
+      "pca_residual_rms": {
+        "median": 0.9813251797455407,
+        "min": 0.8418507148061918,
+        "max": 1.1736177889190174,
+        "pearson_with_validation_accuracy": -0.08765937012006202
+      },
+      "nearest_training_latent_rms": {
+        "median": 0.98143470287323,
+        "min": 0.8419480323791504,
+        "max": 1.173866868019104,
+        "pearson_with_validation_accuracy": -0.08771956522890165
+      }
+    }
+  },
+  "elapsed_seconds_before_plot": 4.310893166344613,
+  "interpretation": "exploratory correlations; no causal identification"
+}

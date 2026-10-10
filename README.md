@@ -152,7 +152,20 @@ The saved standalone generator remains in `artifacts/diffusion-pilot/generator.p
 all 207 final classifiers are under `artifacts/locked-evaluation/models/`. Dataset and
 model binaries stay local and ignored by git. Report evidence is committed under
 `plans/results/` and `plans/figures/`. Optional follow-up work requires approval of
-[the instability diagnosis plan](plans/07_Instability_Diagnosis.md).
+[a bounded revision plan](plans/08_Reduced_Latent_Pilot.md).
+
+## Validation-only sampler diagnosis
+
+```sh
+python -m p_diff.diagnose_latents
+```
+
+The completed diagnosis fits PCA on training codes only and reads the saved pre-test
+validation scores. One component explains 99.9988% of latent variation, while 93/100
+frozen diffusion samples exceed the maximum training-code norm. See [diagnosis results](plans/07_Diagnosis_Results.md).
+No sampling changes or new training were performed. [Architecture notes](plans/Architecture_Notes.md)
+explain the existing compressed generator plus learned decoder and the proposed
+scalar-coordinate interface. The original locked evaluation remains unchanged.
 
 Configuration lives in `configs/foundation.yaml`. Commands use CPU and never load
 the official test set. Checkpoints contain weights and run settings; `manifest.json`
